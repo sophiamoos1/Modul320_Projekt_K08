@@ -54,11 +54,26 @@ public class DeliveryHistory {
     public Date getDeliveryDate() {
         return deliveryDate;
     }
+
+    /**
+     * @param status
+     */
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    /**
+     * @param stations
+     */
+    public void setStations(ArrayList<? extends PackageStation> stations) {
+        this.stations = stations;
+    }
+
+    /**
+     * @param deliveryDate
+     */
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
 }
 
-enum Status {
-    processing,
-    delivered,
-    undefined,
-    shipped
-}

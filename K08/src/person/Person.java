@@ -105,8 +105,3 @@ public class Person {
     }
 }
 
-enum Pronoun {
-    Herr,
-    Frau,
-    DIVERS
-}

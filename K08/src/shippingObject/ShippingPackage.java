@@ -2,7 +2,7 @@ package shippingObject;
 
 import person.Person;
 
-public class Package extends ShippingObject{
+public class ShippingPackage extends ShippingObject{
     private String size;
     private Boolean fragile;
 
@@ -13,7 +13,7 @@ public class Package extends ShippingObject{
      * @param size
      * @param fragile
      */
-    public Package(String objectId, Person sendPerson, Person deliverPerson, String size, Boolean fragile) {
+    public ShippingPackage(String objectId, Person sendPerson, Person deliverPerson, String size, Boolean fragile) {
         super(objectId, sendPerson, deliverPerson);
         this.size = size;
         this.fragile = fragile;

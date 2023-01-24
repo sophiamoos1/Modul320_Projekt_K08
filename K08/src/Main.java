@@ -1,5 +1,8 @@
+import services.Storage;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Storage storage = new Storage();
+        System.out.println();
     }
 }
