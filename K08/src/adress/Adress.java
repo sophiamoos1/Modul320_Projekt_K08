@@ -20,6 +20,11 @@ public class Adress {
         this.city = city;
     }
 
+
+    public String returnFormattedAdress(){
+        return this.street + "\r\n" + this.houseNumber + "\r\n" + this.plz + "\r\n" + this.city;
+    }
+
     /**
      * @return
      */

@@ -2,9 +2,11 @@ package packageStation;
 
 import adress.Adress;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Post implements PackageStation{
+public class Volg implements PackageStation{
+    private ArrayList<String> oppeningHours;
     private Date arivalDate;
     private Adress address;
     private String stationName;
@@ -13,6 +15,7 @@ public class Post implements PackageStation{
     private Boolean gotPickedUp;
 
     /**
+     * @param oppeningHours
      * @param arivalDate
      * @param address
      * @param stationName
@@ -20,13 +23,28 @@ public class Post implements PackageStation{
      * @param lastStation
      * @param gotPickedUp
      */
-    public Post(Date arivalDate, Adress address, String stationName, String postStation, Boolean lastStation, Boolean gotPickedUp) {
+    public Volg(ArrayList<String> oppeningHours, Date arivalDate, Adress address, String stationName, String postStation, Boolean lastStation, Boolean gotPickedUp) {
+        this.oppeningHours = oppeningHours;
         this.arivalDate = arivalDate;
         this.address = address;
         this.stationName = stationName;
         this.postStation = postStation;
         this.lastStation = lastStation;
         this.gotPickedUp = gotPickedUp;
+    }
+
+    /**
+     * @return
+     */
+    public ArrayList<String> getOppeningHours() {
+        return oppeningHours;
+    }
+
+    /**
+     * @param oppeningHours
+     */
+    public void setOppeningHours(ArrayList<String> oppeningHours) {
+        this.oppeningHours = oppeningHours;
     }
 
     /**
@@ -69,17 +87,4 @@ public class Post implements PackageStation{
         return gotPickedUp;
     }
 
-    /**
-     * @return
-     */
-    public String getPostStation() {
-        return postStation;
-    }
-
-    /**
-     * @param postStation
-     */
-    public void setPostStation(String postStation) {
-        this.postStation = postStation;
-    }
 }
