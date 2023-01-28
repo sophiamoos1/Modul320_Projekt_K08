@@ -5,7 +5,5 @@ L
 src/packageStation/Volg.java,9\a\9a91f10855280271d539648e64af8de25f60b099
 W
 'src/shippingObject/ShippingPackage.java,5\6\56c4def2a3bd7938cf2e6c70b31ce7abb1c817ce
-V
-&src/shippingObject/ShippingObject.java,f\a\fa74ee8f59cd343af43bf9a57adeb1bed0a68be8
 N
 src/shippingObject/Letter.java,b\3\b3443d64d566cc37fd9984885a29d63740a51909

@@ -103,5 +103,16 @@ public class Person {
     public void setAdress(Adress adress) {
         this.adress = adress;
     }
+
+
+    public String stringPerson(){
+        String str;
+        if(this.firstName == null || this.firstName.equals("")){
+            str = this.firmenName;
+        }else{
+            str = this.firstName + "\n" + this.lastName;
+        }
+        return str;
+    }
 }
 

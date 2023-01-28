@@ -47,6 +47,9 @@ public class Printer {
         System.out.println(ANSI_RED_BACKGROUND + "6. Programm beenden" + ANSI_RESET);
         System.out.println("\n(Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten)");
         System.out.println("\n-------------------------------------------------------------");
+    }
 
+    public void PrintInfo(String info){
+        System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + info + "\n\n" + TEXT_RESET +ANSI_RESET);
     }
 }

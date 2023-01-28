@@ -35,8 +35,10 @@ public class Controller {
                     if(object != null){
                         printer.printMenu();
                         String menuInput = sc.nextLine();
+                        getAndPrintInfo(menuInput, object);
                     }else{
                         System.out.println("\nDieses Objekt wurde leider nicht gefunden.\nGeben sie eine andere Nummer ein");
+                        return;
                     }
 
             }
@@ -52,5 +54,20 @@ public class Controller {
             }
         }
         return null;
+    }
+
+
+    public void getAndPrintInfo(String input, ShippingObject object){
+        switch(input){
+            case "1":
+                if(object.getStatus()!= null) {
+                    printer.PrintInfo(object.getStatus().toString());
+                }else{
+                    sout
+                }
+                break;
+            case "2":
+                printer.PrintInfo(object.getSendPerson().stringPerson());
+        }
     }
 }
