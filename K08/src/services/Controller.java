@@ -19,12 +19,21 @@ public class Controller {
     }
 
     public void runner(){
+        boolean stop = false;
         Scanner sc = new Scanner(System.in);
         printer.printTitle();
-        System.out.println("Geben Sie die Nummer Ihres Objekts ein");
+        do{
+            System.out.println("Geben Sie die Nummer Ihres Objekts ein");
+            System.out.println("(Um das Programm abzubrechen geben sie ein E ein)");
+            String input = sc.nextLine();
+            if(input.equals("e")){
+                
+            }
+
+        }while(!stop);
         ShippingObject object = searchNumberInShippingObjectArray(sc.nextLine());
         System.out.println(object.getSendPerson().getAdress().returnFormattedAdress());
-
+        printer.printMenu();
 
     }
 

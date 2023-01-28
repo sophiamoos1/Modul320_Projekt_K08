@@ -15,9 +15,14 @@ public class Printer {
     public void printMenu(){
         System.out.println("\nBitte welche Information möchten Sie gerne erhalten?");
         System.out.println("\n-------------------------------------------------------------");
-        System.out.println("1.Den Zustellungstatus ansehen");
-        System.out.println("2.Die Versendungsperson erfahren");
-        System.out.println("3.Die Versendungsadresse erfahren");
+        System.out.println("1. Den Zustellungstatus ansehen");
+        System.out.println("2. Die Versendungsperson erfahren");
+        System.out.println("3. Die Versendungsadresse erfahren");
+        System.out.println("4. Den Zustellungsverlauf ansehen");
+        System.out.println("5. Die Obejektinformationen ansehen");
+        System.out.println("6. Programm beenden");
+        System.out.println("\n(Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten)");
+        System.out.println("\n-------------------------------------------------------------");
 
     }
 }
