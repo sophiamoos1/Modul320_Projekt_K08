@@ -41,7 +41,9 @@ public class Storage {
     private DeliveryHistory firstHistory = new DeliveryHistory(Status.shipped, listOne, new Date(2023, 01, 25));
 
     public Storage(){
-
+        this.firstPackage.setPackageStations(listOne);
+        this.firstPackage.setStatus(Status.shipped);
+        this.firstPackage.setDeliveryDate(new Date(2023, 01, 25));
     }
 
     public Adress getFirstPostAddress() {
@@ -153,6 +155,7 @@ public class Storage {
     }
 
     public void setFirstPackage(ShippingPackage firstPackage) {
+
         this.firstPackage = firstPackage;
     }
 

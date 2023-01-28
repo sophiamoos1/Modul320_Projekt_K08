@@ -50,6 +50,6 @@ public class Printer {
     }
 
     public void PrintInfo(String info){
-        System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + info + "\n\n" + TEXT_RESET +ANSI_RESET);
+        System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + "\nInfo:" + "\n---------------------------------------\n" + info + "\n\n" + TEXT_RESET +ANSI_RESET);
     }
 }

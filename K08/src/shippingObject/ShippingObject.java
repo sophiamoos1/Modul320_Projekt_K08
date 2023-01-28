@@ -93,7 +93,8 @@ public abstract class ShippingObject {
     /**
      * @return
      */
-    public Status getStatus() {
+    public Status getStatus()
+    {
         return this.deliveryHistory.getStatus();
     }
 
@@ -109,5 +110,20 @@ public abstract class ShippingObject {
      */
     public Date getDeliveryDate() {
         return this.deliveryHistory.getDeliveryDate();
+    }
+
+
+    public String formatHistory(){
+        String str = "";
+        for(int i = 0; i < this.deliveryHistory.getStations().size(); i++){
+            PackageStation station = this.deliveryHistory.getStations().get(i);
+            String info = "Stationname: " + station.stationName() + "\n"
+                    + "Ankunftsdatum: " + station.arivalDate().toString() + "\n"
+                    + "Wurde abgeholt: " + station.gotPickedUp().toString() + "\n"
+                    + "Ziel Station : " + station.lastStation().toString() + "\n"
+                    + station.adress().returnFormattedAdress() + "\n------------------------------------------------\n\n";
+            str = str + info;
+        }
+        return str;
     }
 }

@@ -60,14 +60,17 @@ public class Controller {
     public void getAndPrintInfo(String input, ShippingObject object){
         switch(input){
             case "1":
-                if(object.getStatus()!= null) {
-                    printer.PrintInfo(object.getStatus().toString());
-                }else{
-                    sout
-                }
+                printer.PrintInfo(object.getStatus().toString());
                 break;
             case "2":
                 printer.PrintInfo(object.getSendPerson().stringPerson());
+                break;
+            case "3":
+                printer.PrintInfo(object.getSendPerson().getAdress().returnFormattedAdress());
+                break;
+            case "4":
+                printer.PrintInfo(object.formatHistory());
+                break;
         }
     }
 }
