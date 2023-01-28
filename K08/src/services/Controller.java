@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.NoObjectFoundException;
 import shippingObject.ShippingObject;
 
 import java.rmi.NoSuchObjectException;
@@ -27,18 +28,25 @@ public class Controller {
             System.out.println("(Um das Programm abzubrechen geben sie ein E ein)");
             String input = sc.nextLine();
             if(input.equals("e")){
-                
-            }
+                stop = true;
+                return;
+            }else{
+                    ShippingObject object = searchNumberInShippingObjectArray(input);
+                    if(object != null){
+                        printer.printMenu();
+                        String menuInput = sc.nextLine();
+                    }else{
+                        System.out.println("\nDieses Objekt wurde leider nicht gefunden.\nGeben sie eine andere Nummer ein");
+                    }
 
+            }
         }while(!stop);
-        ShippingObject object = searchNumberInShippingObjectArray(sc.nextLine());
-        System.out.println(object.getSendPerson().getAdress().returnFormattedAdress());
         printer.printMenu();
 
     }
 
     public ShippingObject searchNumberInShippingObjectArray(String number) {
-        for (int i = 0; i <= this.shippingObjects.size(); i++) {
+        for (int i = 0; i < this.shippingObjects.size(); i++) {
             if (shippingObjects.get(i).getObjectId().equals(number)) {
                 return shippingObjects.get(i);
             }
