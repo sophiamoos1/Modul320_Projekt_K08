@@ -135,6 +135,7 @@ public abstract class ShippingObject {
      */
     public String formatObjectInfo(){
         return " Verfolgungsnummer: " + this.objectId
-                + "\n Status: " + getStatus().toString();
+                + "\n Status: " + getStatus().toString()
+                + "\n geschätztes Ankunftsdatum: " + getDeliveryDate().toString();
     }
 }

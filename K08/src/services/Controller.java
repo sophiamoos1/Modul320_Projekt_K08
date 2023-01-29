@@ -36,7 +36,7 @@ public class Controller {
                     if(object != null){
                         printer.printMenu();
                         String menuInput = sc.nextLine();
-                        getAndPrintInfo(menuInput, object);
+                        stop = getAndPrintInfo(menuInput, object);
                     }else{
                         System.out.println("\nDieses Objekt wurde leider nicht gefunden.\nGeben sie eine andere Nummer ein");
                         return;
@@ -44,8 +44,6 @@ public class Controller {
 
             }
         }while(!stop);
-        printer.printMenu();
-
     }
 
     /**
@@ -65,20 +63,28 @@ public class Controller {
      * @param input
      * @param object
      */
-    public void getAndPrintInfo(String input, ShippingObject object){
+    public boolean getAndPrintInfo(String input, ShippingObject object){
         switch(input){
             case "1":
                 printer.PrintInfo(" Status: " + object.getStatus().toString());
-                break;
+                return false;
             case "2":
                 printer.PrintInfo(object.getSendPerson().stringPerson());
-                break;
+                return false;
             case "3":
                 printer.PrintInfo(object.getSendPerson().getAdress().returnFormattedAdress());
-                break;
+                return false;
             case "4":
                 printer.PrintInfo(object.formatHistory());
-                break;
+                return false;
+            case "5":
+                printer.PrintInfo(object.formatObjectInfo());
+                return false;
+            case "6":
+                return true;
+            default:
+                System.out.println("Deine Eingabe entsprach keiner der möglichen Optionen!");
+                return false;
         }
     }
 }
