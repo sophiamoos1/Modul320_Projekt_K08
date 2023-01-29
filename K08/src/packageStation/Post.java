@@ -29,8 +29,6 @@ public class Post implements PackageStation{
         this.gotPickedUp = gotPickedUp;
     }
 
-
-
     /**
      * @return
      */

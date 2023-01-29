@@ -105,6 +105,9 @@ public class Person {
     }
 
 
+    /**
+     * @return
+     */
     public String stringPerson(){
         String str;
         if(this.firstName == null || this.firstName.equals("")){

@@ -30,6 +30,9 @@ public class Letter extends ShippingObject {
         this.envelop = envelop;
     }
 
+    /**
+     * @return
+     */
     public String formatObjectInfo(){
         return super.formatObjectInfo() + "\n Umschlagsgrösse: " + this.envelop.toString();
     }

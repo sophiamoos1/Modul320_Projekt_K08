@@ -47,6 +47,9 @@ public class ShippingPackage extends ShippingObject{
         this.fragile = fragile;
     }
 
+    /**
+     * @return
+     */
     public String formatObjectInfo(){
         return super.formatObjectInfo() + "\n Grösse: " + this.size + "\n Zerbrechlich: " + this.fragile;
     }

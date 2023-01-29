@@ -20,7 +20,9 @@ public class Adress {
         this.city = city;
     }
 
-
+    /**
+     * @return
+     */
     public String returnFormattedAdress(){
         return " Adresse:\n Strasse: " + this.street + " \n Hausnummer: " + this.houseNumber + "\n PLZ: " + this.plz + "\n Stadt: " + this.city;
     }
