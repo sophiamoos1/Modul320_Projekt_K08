@@ -25,23 +25,18 @@ public class Controller {
         Scanner sc = new Scanner(System.in);
         printer.printTitle();
         do{
-            System.out.println("Geben Sie die Nummer Ihres Objekts ein");
-            System.out.println("(Um das Programm abzubrechen geben sie ein E ein)");
+            printer.printInputMessage();
             String input = sc.nextLine();
             if(input.equals("e")){
                 stop = true;
                 return;
             }else{
-                    ShippingObject object = searchNumberInShippingObjectArray(input);
-                    if(object != null){
-                        printer.printMenu();
-                        String menuInput = sc.nextLine();
-                        stop = getAndPrintInfo(menuInput, object);
-                    }else{
-                        System.out.println("\nDieses Objekt wurde leider nicht gefunden.\nGeben sie eine andere Nummer ein");
-                        return;
-                    }
-
+                   try{
+                       stop = getInfosFromObject(input);
+                   }catch (NoObjectFoundException e){
+                       stop = false;
+                       printer.printException(e.getMessage());
+                   }
             }
         }while(!stop);
     }
@@ -57,6 +52,23 @@ public class Controller {
             }
         }
         return null;
+    }
+
+    /**
+     * @param input
+     * @return
+     * @throws NoObjectFoundException
+     */
+    public boolean getInfosFromObject(String input) throws NoObjectFoundException{
+        Scanner sc = new Scanner(System.in);
+        ShippingObject object = searchNumberInShippingObjectArray(input);
+        if(object == null){
+            throw new NoObjectFoundException("\nDieses Objekt wurde leider nicht gefunden.\nGeben sie eine andere Nummer ein");
+        }else{
+            printer.printMenu();
+            String menuInput = sc.nextLine();
+            return getAndPrintInfo(menuInput, object);
+        }
     }
 
     /**

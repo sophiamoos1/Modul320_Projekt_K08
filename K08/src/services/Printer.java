@@ -37,18 +37,30 @@ public class Printer {
     }
 
     public void printMenu(){
-        System.out.println("\n========================================================================");
-        System.out.println("\n  Bitte welche Information möchten Sie gerne erhalten?");
-        System.out.println("\n------------------------------------------------------------------------");
-        System.out.println(" 1. Den Zustellungstatus ansehen");
-        System.out.println(" 2. Die Versendungsperson erfahren");
-        System.out.println(" 3. Die Versendungsadresse erfahren");
-        System.out.println(" 4. Den Zustellungsverlauf ansehen");
-        System.out.println(" 5. Die Obejektinformationen ansehen");
+        System.out.println("\n"+ ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "========================================================================"
+                + TEXT_RESET + ANSI_RESET + "\n" +
+                ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "Bitte welche Information möchten Sie gerne erhalten?                    " +
+                TEXT_RESET + ANSI_RESET + "\n" +
+                ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "------------------------------------------------------------------------"
+                + TEXT_RESET + ANSI_RESET + "\n");
+        System.out.println(TEXT_BLUE + " 1. Den Zustellungstatus ansehen" + TEXT_RESET);
+        System.out.println(TEXT_YELLOW + " 2. Die Versendungsperson erfahren" + TEXT_RESET);
+        System.out.println(TEXT_CYAN + " 3. Die Versendungsadresse erfahren" + TEXT_RESET);
+        System.out.println(TEXT_PURPLE +" 4. Den Zustellungsverlauf ansehen" + TEXT_RESET);
+        System.out.println(TEXT_GREEN + " 5. Die Obejektinformationen ansehen" + TEXT_RESET);
         System.out.println(ANSI_RED_BACKGROUND + TEXT_BLACK + " 6. Programm beenden" + TEXT_RESET + ANSI_RESET);
-        System.out.println("\n------------------------------------------------------------------------");
-        System.out.println(" (Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten)");
-        System.out.println("\n========================================================================");
+        System.out.println("\n\n" + ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "------------------------------------------------------------------------" +
+                TEXT_RESET + ANSI_RESET + "\n" +
+                ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "(Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten) " +
+                TEXT_RESET + ANSI_RESET + "\n" +
+                ANSI_WHITE_BACKGROUND + TEXT_BLACK +
+                "========================================================================"
+                + TEXT_RESET + ANSI_RESET);
     }
 
     /**
@@ -56,5 +68,16 @@ public class Printer {
      */
     public void PrintInfo(String info){
         System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + "========================================================================\n Info:" + "\n========================================================================\n" + info + "\n========================================================================\n\n" + TEXT_RESET +ANSI_RESET);
+    }
+
+    /**
+     * @param message
+     */
+    public void printException(String message){
+        System.out.println(ANSI_RED_BACKGROUND + TEXT_BLACK + "!!! " + message + " !!!\n" + TEXT_RESET + ANSI_RESET);
+    }
+
+    public void printInputMessage(){
+        System.out.println(ANSI_GREEN_BACKGROUND + TEXT_BLACK + "Geben Sie die Nummer Ihres Objekts ein\n(Um das Programm abzubrechen geben sie ein E ein)\n" + TEXT_RESET + ANSI_RESET);
     }
 }
