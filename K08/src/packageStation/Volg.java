@@ -34,6 +34,23 @@ public class Volg implements PackageStation{
     }
 
     /**
+     * @param arivalDate
+     * @param address
+     * @param stationName
+     * @param postStation
+     * @param lastStation
+     * @param gotPickedUp
+     */
+    public Volg(Date arivalDate, Adress address, String stationName, String postStation, Boolean lastStation, Boolean gotPickedUp) {
+        this.arivalDate = arivalDate;
+        this.address = address;
+        this.stationName = stationName;
+        this.postStation = postStation;
+        this.lastStation = lastStation;
+        this.gotPickedUp = gotPickedUp;
+    }
+
+    /**
      * @return
      */
     public ArrayList<String> getOppeningHours() {

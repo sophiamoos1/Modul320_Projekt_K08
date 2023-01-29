@@ -37,19 +37,24 @@ public class Printer {
     }
 
     public void printMenu(){
-        System.out.println("\nBitte welche Information möchten Sie gerne erhalten?");
-        System.out.println("\n-------------------------------------------------------------");
-        System.out.println("1. Den Zustellungstatus ansehen");
-        System.out.println("2. Die Versendungsperson erfahren");
-        System.out.println("3. Die Versendungsadresse erfahren");
-        System.out.println("4. Den Zustellungsverlauf ansehen");
-        System.out.println("5. Die Obejektinformationen ansehen");
-        System.out.println(ANSI_RED_BACKGROUND + "6. Programm beenden" + ANSI_RESET);
-        System.out.println("\n(Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten)");
-        System.out.println("\n-------------------------------------------------------------");
+        System.out.println("\n========================================================================");
+        System.out.println("\n  Bitte welche Information möchten Sie gerne erhalten?");
+        System.out.println("\n------------------------------------------------------------------------");
+        System.out.println(" 1. Den Zustellungstatus ansehen");
+        System.out.println(" 2. Die Versendungsperson erfahren");
+        System.out.println(" 3. Die Versendungsadresse erfahren");
+        System.out.println(" 4. Den Zustellungsverlauf ansehen");
+        System.out.println(" 5. Die Obejektinformationen ansehen");
+        System.out.println(ANSI_RED_BACKGROUND + TEXT_BLACK + " 6. Programm beenden" + TEXT_RESET + ANSI_RESET);
+        System.out.println("\n------------------------------------------------------------------------");
+        System.out.println(" (Bitte geben sie die Zahl der Option ein, welche Sie ausführen möchten)");
+        System.out.println("\n========================================================================");
     }
 
+    /**
+     * @param info
+     */
     public void PrintInfo(String info){
-        System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + "\nInfo:" + "\n---------------------------------------\n" + info + "\n\n" + TEXT_RESET +ANSI_RESET);
+        System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + "========================================================================\n Info:" + "\n========================================================================\n" + info + "\n========================================================================\n\n" + TEXT_RESET +ANSI_RESET);
     }
 }

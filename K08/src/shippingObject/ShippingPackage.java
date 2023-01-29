@@ -46,4 +46,8 @@ public class ShippingPackage extends ShippingObject{
     public void setFragile(Boolean fragile) {
         this.fragile = fragile;
     }
+
+    public String formatObjectInfo(){
+        return super.formatObjectInfo() + "\n Grösse: " + this.size + "\n Zerbrechlich: " + this.fragile;
+    }
 }

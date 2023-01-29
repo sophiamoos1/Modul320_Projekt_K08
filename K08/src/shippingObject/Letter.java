@@ -29,13 +29,10 @@ public class Letter extends ShippingObject {
     public void setEnvelop(envelopType envelop) {
         this.envelop = envelop;
     }
+
+    public String formatObjectInfo(){
+        return super.formatObjectInfo() + "\n Umschlagsgrösse: " + this.envelop.toString();
+    }
 }
 
 
-enum envelopType {
-    A3,
-    A4,
-    A5,
-    A6,
-
-}

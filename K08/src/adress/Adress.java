@@ -22,7 +22,7 @@ public class Adress {
 
 
     public String returnFormattedAdress(){
-        return "Adresse:\n" + this.street + "\r\n" + this.houseNumber + "\r\n" + this.plz + "\r\n" + this.city;
+        return " Adresse:\n Strasse: " + this.street + " \n Hausnummer: " + this.houseNumber + "\n PLZ: " + this.plz + "\n Stadt: " + this.city;
     }
 
     /**

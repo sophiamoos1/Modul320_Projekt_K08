@@ -3,6 +3,7 @@ package services;
 import exceptions.NoObjectFoundException;
 import shippingObject.ShippingObject;
 
+import javax.swing.text.StyledEditorKit;
 import java.rmi.NoSuchObjectException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Controller {
     public Controller(){
         this.printer = new Printer();
         this.storage = new Storage();
-        this.shippingObjects = new ArrayList<ShippingObject>(List.of(storage.getFirstPackage()));
+        this.shippingObjects = new ArrayList<ShippingObject>(List.of(storage.getFirstPackage(), storage.getFirstLetter()));
     }
 
     public void runner(){
@@ -47,20 +48,27 @@ public class Controller {
 
     }
 
+    /**
+     * @param number
+     * @return
+     */
     public ShippingObject searchNumberInShippingObjectArray(String number) {
-        for (int i = 0; i < this.shippingObjects.size(); i++) {
-            if (shippingObjects.get(i).getObjectId().equals(number)) {
-                return shippingObjects.get(i);
+        for (ShippingObject object : this.shippingObjects) {
+            if (object.getObjectId().equals(number)) {
+                return object;
             }
         }
         return null;
     }
 
-
+    /**
+     * @param input
+     * @param object
+     */
     public void getAndPrintInfo(String input, ShippingObject object){
         switch(input){
             case "1":
-                printer.PrintInfo(object.getStatus().toString());
+                printer.PrintInfo(" Status: " + object.getStatus().toString());
                 break;
             case "2":
                 printer.PrintInfo(object.getSendPerson().stringPerson());

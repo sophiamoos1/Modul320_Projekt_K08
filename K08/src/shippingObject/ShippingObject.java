@@ -113,17 +113,28 @@ public abstract class ShippingObject {
     }
 
 
+    /**
+     * @return
+     */
     public String formatHistory(){
         String str = "";
         for(int i = 0; i < this.deliveryHistory.getStations().size(); i++){
             PackageStation station = this.deliveryHistory.getStations().get(i);
-            String info = "Stationname: " + station.stationName() + "\n"
-                    + "Ankunftsdatum: " + station.arivalDate().toString() + "\n"
-                    + "Wurde abgeholt: " + station.gotPickedUp().toString() + "\n"
-                    + "Ziel Station : " + station.lastStation().toString() + "\n"
-                    + station.adress().returnFormattedAdress() + "\n------------------------------------------------\n\n";
+            String info = " Station: " + station.stationName()
+                    + "\n Ankunftsdatum: " + station.arivalDate().toString()
+                    + "\n Wurde abgeholt: " + station.gotPickedUp().toString()
+                    + "\n Ziel Station : " + station.lastStation().toString()
+                    + "\n" + station.adress().returnFormattedAdress() + "\n....................................................\n\n";
             str = str + info;
         }
         return str;
+    }
+
+    /**
+     * @return
+     */
+    public String formatObjectInfo(){
+        return " Verfolgungsnummer: " + this.objectId
+                + "\n Status: " + getStatus().toString();
     }
 }

@@ -5,9 +5,12 @@ import deliveryHistory.DeliveryHistory;
 import deliveryHistory.Status;
 import packageStation.PackageStation;
 import packageStation.Post;
+import packageStation.Volg;
 import person.Person;
 import person.Pronoun;
+import shippingObject.Letter;
 import shippingObject.ShippingPackage;
+import shippingObject.envelopType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,17 +36,74 @@ public class Storage {
     private Person sophia = new Person("Sophia", "Moos", Pronoun.Frau, sophiaAdress);
 
     private ShippingPackage firstPackage = new ShippingPackage("1", sophia, jan, "30cm x 50cm", false);
+    private Letter firstLetter = new Letter("2", mikka, jan, envelopType.A3);
 
     private Post firstPost = new Post(new Date(2023, 1, 23), firstPostAddress, "Post", "Zug Metalli Post", false, true);
     private Post secondPost = new Post(new Date(2023, 1, 24), secondPostAddress, "Post", "Grabenpoststelle", true, false);
+    private Volg firstVolg = new Volg(new Date(2023, 1, 16), firstVolgAdress, "Volg", "Volg Hausen am Albis", true, false);
+    private Post thirdPost = new Post(new Date(2023, 1,14), thirdPostAddress, "Post", "Hertizentrum Post", false, true);
+    private Volg secondVolg = new Volg(new Date(2023, 1, 13), secondVolgAdress, "Volg", "Volg Mettmestetten", false, true);
 
     private ArrayList<? extends PackageStation> listOne = new ArrayList<>(List.of(firstPost, secondPost));
+    private ArrayList<? extends PackageStation> listTwo = new ArrayList<>(List.of(secondVolg, thirdPost, firstVolg));
     private DeliveryHistory firstHistory = new DeliveryHistory(Status.shipped, listOne, new Date(2023, 01, 25));
+    private DeliveryHistory secondHistory = new DeliveryHistory(Status.shipped, listTwo, new Date(2023, 1, 16));
 
     public Storage(){
         this.firstPackage.setPackageStations(listOne);
         this.firstPackage.setStatus(Status.shipped);
         this.firstPackage.setDeliveryDate(new Date(2023, 01, 25));
+        this.firstLetter.setPackageStations(listTwo);
+        this.firstLetter.setStatus(Status.shipped);
+        this.firstLetter.setDeliveryDate(new Date(2023, 01, 16));
+    }
+
+    public Letter getFirstLetter() {
+        return firstLetter;
+    }
+
+    public void setFirstLetter(Letter firstLetter) {
+        this.firstLetter = firstLetter;
+    }
+
+    public Volg getFirstVolg() {
+        return firstVolg;
+    }
+
+    public void setFirstVolg(Volg firstVolg) {
+        this.firstVolg = firstVolg;
+    }
+
+    public Post getThirdPost() {
+        return thirdPost;
+    }
+
+    public void setThirdPost(Post thirdPost) {
+        this.thirdPost = thirdPost;
+    }
+
+    public Volg getSecondVolg() {
+        return secondVolg;
+    }
+
+    public void setSecondVolg(Volg secondVolg) {
+        this.secondVolg = secondVolg;
+    }
+
+    public ArrayList<? extends PackageStation> getListTwo() {
+        return listTwo;
+    }
+
+    public void setListTwo(ArrayList<? extends PackageStation> listTwo) {
+        this.listTwo = listTwo;
+    }
+
+    public DeliveryHistory getSecondHistory() {
+        return secondHistory;
+    }
+
+    public void setSecondHistory(DeliveryHistory secondHistory) {
+        this.secondHistory = secondHistory;
     }
 
     public Adress getFirstPostAddress() {

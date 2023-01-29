@@ -110,7 +110,7 @@ public class Person {
         if(this.firstName == null || this.firstName.equals("")){
             str = this.firmenName;
         }else{
-            str = this.firstName + "\n" + this.lastName;
+            str = " Person:\n Vorname: " + this.firstName + "\n Nachname: " + this.lastName;
         }
         return str;
     }
