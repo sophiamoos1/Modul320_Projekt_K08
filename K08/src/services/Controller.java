@@ -42,8 +42,8 @@ public class Controller {
     }
 
     /**
-     * @param number
-     * @return
+     * @param number    The id of a potential shipping object
+     * @return          The object of with the id of param or null
      */
     public ShippingObject searchNumberInShippingObjectArray(String number) {
         for (ShippingObject object : this.shippingObjects) {
@@ -55,8 +55,8 @@ public class Controller {
     }
 
     /**
-     * @param input
-     * @return
+     * @param input     Input of the User which should be a id of a existing shipping object
+     * @return          A boolean which decides if the process should be stoped or not
      * @throws NoObjectFoundException
      */
     public boolean getInfosFromObject(String input) throws NoObjectFoundException{

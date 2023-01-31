@@ -15,9 +15,9 @@ public abstract class ShippingObject {
     private DeliveryHistory deliveryHistory;
 
     /**
-     * @param objectId
-     * @param sendPerson
-     * @param deliverPerson
+     * @param objectId  Id of the Object, used to track a shipping object
+     * @param sendPerson    Person who sended this object
+     * @param deliverPerson Person who should get the object
      */
     public ShippingObject(String objectId, Person sendPerson, Person deliverPerson) {
         this.objectId = objectId;
@@ -28,28 +28,28 @@ public abstract class ShippingObject {
 
 
     /**
-     * @return
+     * @return  id of this object
      */
     public String getObjectId() {
         return objectId;
     }
 
     /**
-     * @param objectId
+     * @param objectId  The id of this object
      */
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
 
     /**
-     * @return
+     * @return  The person who sended this object
      */
     public Person getSendPerson() {
         return sendPerson;
     }
 
     /**
-     * @param sendPerson
+     * @param sendPerson    The person who sended this object
      */
     public void setSendPerson(Person sendPerson) {
         this.sendPerson = sendPerson;
@@ -114,7 +114,7 @@ public abstract class ShippingObject {
 
 
     /**
-     * @return
+     * @return  formated String of all package stations which this object reached
      */
     public String formatHistory(){
         String str = "";
@@ -131,7 +131,7 @@ public abstract class ShippingObject {
     }
 
     /**
-     * @return
+     * @return  formated String of some important infos of this object (objectId, Status, devlivery Date)
      */
     public String formatObjectInfo(){
         return " Verfolgungsnummer: " + this.objectId

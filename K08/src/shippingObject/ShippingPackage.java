@@ -48,7 +48,8 @@ public class ShippingPackage extends ShippingObject{
     }
 
     /**
-     * @return
+     * @return  formated String of some important infos of this object (objectId, Status, devlivery Date, size, fragile)
+     * @Override
      */
     public String formatObjectInfo(){
         return super.formatObjectInfo() + "\n Grösse: " + this.size + "\n Zerbrechlich: " + this.fragile;
