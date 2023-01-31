@@ -1,6 +1,9 @@
 package services;
 
 public class Printer {
+    /**
+     * Colors for Console
+     */
     public static final String TEXT_RESET = "\u001B[0m";
     public static final String TEXT_BLACK = "\u001B[30m";
     public static final String TEXT_RED = "\u001B[31m";
@@ -21,6 +24,9 @@ public class Printer {
     public static final String ANSI_RESET = "\u001B[0m";
     public Printer(){}
 
+    /**
+     * Title with ASCII ART
+     */
     public void printTitle(){
         System.out.println(ANSI_YELLOW_BACKGROUND + TEXT_BLACK + "   ___      _        _                     __       _                         \n" +
                 "  / _ \\__ _| | _____| |_  /\\   /\\___ _ __ / _| ___ | | __ _ _   _ _ __   __ _ \n" +
@@ -36,6 +42,9 @@ public class Printer {
                 + TEXT_RESET+ANSI_RESET);
     }
 
+    /**
+     * Menu with Options of the Information which can be showed
+     */
     public void printMenu(){
         System.out.println("\n"+ ANSI_WHITE_BACKGROUND + TEXT_BLACK +
                 "========================================================================"
