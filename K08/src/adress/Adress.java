@@ -21,7 +21,7 @@ public class Adress {
     }
 
     /**
-     * @return
+     * @return  Formated String of the Fields in Adress (Street, Housenumber, PLZ and City)
      */
     public String returnFormattedAdress(){
         return " Adresse:\n Strasse: " + this.street + " \n Hausnummer: " + this.houseNumber + "\n PLZ: " + this.plz + "\n Stadt: " + this.city;

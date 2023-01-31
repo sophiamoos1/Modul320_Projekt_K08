@@ -64,14 +64,14 @@ public class Printer {
     }
 
     /**
-     * @param info
+     * @param info  The Info which should be printed out
      */
     public void PrintInfo(String info){
         System.out.println(ANSI_WHITE_BACKGROUND + TEXT_BLACK + "========================================================================\n Info:" + "\n========================================================================\n" + info + "\n========================================================================\n\n" + TEXT_RESET +ANSI_RESET);
     }
 
     /**
-     * @param message
+     * @param message The Exception Message which will be printed out
      */
     public void printException(String message){
         System.out.println(ANSI_RED_BACKGROUND + TEXT_BLACK + "!!! " + message + " !!!\n" + TEXT_RESET + ANSI_RESET);

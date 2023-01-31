@@ -106,7 +106,7 @@ public class Person {
 
 
     /**
-     * @return
+     * @return Formated String of some Fields this Person contains
      */
     public String stringPerson(){
         String str;
