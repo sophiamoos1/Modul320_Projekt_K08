@@ -57,7 +57,8 @@ public class Controller {
     /**
      * @param input     Input of the User which should be a id of a existing shipping object
      * @return          A boolean which decides if the process should be stoped or not
-     * @throws NoObjectFoundException
+     * @throws NoObjectFoundException   If the Object is null my Custom Exception will be throw because the object with the entered id was nd found and
+     *                                  so the object is null.
      */
     public boolean getInfosFromObject(String input) throws NoObjectFoundException{
         Scanner sc = new Scanner(System.in);
