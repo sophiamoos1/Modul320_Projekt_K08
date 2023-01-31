@@ -73,8 +73,9 @@ public class Controller {
     }
 
     /**
-     * @param input
-     * @param object
+     * @param input     The Input of the User, this input decides which case will be used
+     * @param object    The Object, so that the Infos can be gettet by the object
+     * @return          A Boolean, which is used to decide if the loop will run again or the programm will stop.
      */
     public boolean getAndPrintInfo(String input, ShippingObject object){
         switch(input){
